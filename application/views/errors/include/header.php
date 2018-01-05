@@ -59,7 +59,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="header-brand">
               <a class="header-brand-text" href="main" title="Home">
                 <h1>
-                  <strong>Cherrypie</strong>&nbsp;<span>Schedule</span>&nbsp;<i class="fa fa-magic" aria-hidden="true"></i>
+                  <!-- <strong>EU</strong><span>Lover Schedule</span>&nbsp;<i class="fa fa-magic" aria-hidden="true"></i> -->
+                  <strong>EU Lover</strong>&nbsp;<span>Schedule</span>&nbsp;<i class="fa fa-magic" aria-hidden="true"></i>
                 </h1>
               </a>
             </div>
