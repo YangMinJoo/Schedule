@@ -11,11 +11,8 @@ class Schedule extends CI_Controller
 
   function schedule_list()
   {
-      $this->load->helper('file');
-	  
       $data['menu'] = $this->menu;
       $this->load->view('include/header', $data);
-      $data['ics'] = $ics;
       $this->load->view('schedule/list', $data);
       $this->load->view('include/footer');
   }
