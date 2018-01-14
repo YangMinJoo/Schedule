@@ -59,7 +59,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="header-brand">
               <a class="header-brand-text" href="main" title="Home">
                 <h1>
-                  <strong>Cherrypie</strong>&nbsp;<span>Schedule</span>&nbsp;<i class="fa fa-moon-o" aria-hidden="true"></i>
+                  <!-- <strong>EU</strong><span>Lover Schedule</span>&nbsp;<i class="fa fa-magic" aria-hidden="true"></i> -->
+                  <strong>EU Lover</strong>&nbsp;<span>Schedule</span>&nbsp;<i class="fa fa-magic" aria-hidden="true"></i>
                 </h1>
               </a>
             </div>
@@ -70,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <li class="nav-item"> <a class="nav-link text-center text-uppercase font-weight-bold px-3 px-lg-4 py-3 <?php if($menu == 'common'){ echo 'active'; }?>" href="<?php echo site_url('common_blog'); ?>" role="tab"><i class="fa fa-suitcase"></i></a> </li>
               <li class="nav-item"> <a class="nav-link text-center text-uppercase font-weight-bold px-3 px-lg-4 py-3 <?php if($menu == 'schedule'){ echo 'active'; }?>" href="<?php echo site_url('schedule'); ?>" role="tab"><i class="fa fa-calendar"></i></a></li>
               <li class="nav-item"> <a class="nav-link text-center text-uppercase font-weight-bold px-3 px-lg-4 py-3 <?php if($menu == 'timeline'){ echo 'active'; }?>" href="<?php echo site_url('timeline'); ?>" role="tab"><i class="fa fa-clock-o"></i></a> </li>
-              <li class="nav-item"> <a class="nav-link text-center text-uppercase font-weight-bold px-3 px-lg-4 py-3" href="<?php echo site_url('auth/logout'); ?>" role="tab"><i class="fa fa-unlock-alt"></i></a></li>
+              <li class="nav-item"> <a class="nav-link text-center text-uppercase font-weight-bold px-3 px-lg-4 py-3" href=<?php echo site_url('auth/logout'); ?>" role="tab"><i class="fa fa-unlock-alt"></i></a></li>
             </ul>
           </div>
         </div>

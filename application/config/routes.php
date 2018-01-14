@@ -60,6 +60,8 @@ $route['main'] = 'menu/main';
 $route['timeline'] = 'menu/timeline';
 $route['commingsoon'] = 'menu/commingsoon';
 $route['demo'] = 'menu/demov1';
+$route['manual'] = 'menu/sitemanual';
+$route['contact'] = 'menu/contact';
 
 $route['personal_blog'] = 'personal_blog/blog_list';
 $route['personal_blog_write'] = 'personal_blog/write';

@@ -10,10 +10,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="bg-video-video" style="position: absolute; z-index: -1; top: 0px; left: 0px; bottom: 0px; right: 0px; overflow: hidden; background-size: cover; background-color: transparent; background-repeat: no-repeat; background-position: 50% 50%; background-image: none;">
             </div>
               <h4 class="text-white">
-                <!-- Here is Eulover Schedule Site :D -->
                 Here is Cherrypie Schedule Site :D
               </h4>
             </div>
+        </div>
+		<div class="col-lg-4 py-2">
+          <a href="manual" style="">
+          <i class="fa fa-comments-o icon-5x text-primary" data-animate="fadeIn" data-animate-delay="0.1"></i>
+          <h4 class="mt-2 text-blue-dark">
+            Manual
+          </h4>
+          <p class="text-grey-dark">사이트 설명</p>
+          </a>
         </div>
         <div class="col-lg-4 py-2">
           <a href="personal_blog">
@@ -50,21 +58,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </h4>
           <p class="text-grey-dark">스케쥴 확인하기</p>
         </div>
-        <div class="col-lg-4 py-2">
-          <a href="http://appstrap.dothome.co.kr/theme/edit_home.html">
-          <i class="fa fa-rocket icon-5x text-primary" data-animate="fadeIn" data-animate-delay="0.4"></i>
+		<div class="col-lg-4 py-2">
+          <a href="contact" style="">
+          <i class="fa fa-envelope icon-5x text-primary" data-animate="fadeIn" data-animate-delay="0.1"></i>
           <h4 class="mt-2 text-blue-dark">
-            Demo
+            Contact
           </h4>
-          <p class="text-grey-dark">데모버젼 확인하기</p>
+          <p class="text-grey-dark">연락하기</p>
           </a>
-        </div>
-        <div class="col-lg-4 py-2">
-          <i class="fa fa-gift icon-5x text-primary" data-animate="fadeIn" data-animate-delay="0.6"></i>
-          <h4 class="mt-2 text-blue-dark">
-            Board
-          </h4>
-          <p class="text-grey-dark">임시 게시판</p>
         </div>
       </div>
     </div>
