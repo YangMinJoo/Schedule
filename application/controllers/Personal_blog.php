@@ -41,7 +41,7 @@ class Personal_blog extends CI_Controller
   function write_api()
   {
     $this->form_validation->set_rules('title', 'title', 'trim|required|max_length[100]');
-    $this->form_validation->set_rules('category_name', 'category_name', 'trim|max_length[20]|required');
+    $this->form_validation->set_rules('category_name', 'category_name', 'trim|max_length[20]');
     $this->form_validation->set_rules('know', 'know', 'trim|max_length[1000]');
     $this->form_validation->set_rules('idea', 'idea', 'trim|max_length[2000]');
     $this->form_validation->set_rules('problem', 'problem', 'trim|max_length[1000]');
@@ -50,7 +50,7 @@ class Personal_blog extends CI_Controller
 
     if($this->form_validation->run() === true)
     {
-        if($this->input->post('category_name') != null)
+        if($this->input->post('category_name') != null)  //카테고리를 새로 작성한경우
         {
           $category_id = $this->personalblog_model->write_category(array(
             'category' => $this->input->post('category_name'),
@@ -60,17 +60,15 @@ class Personal_blog extends CI_Controller
           ));
         }
 
-        else if ($this->input->post('category_list') != "")
+        else if($this->input->post('category_list') != "") //카테고리를 선택한경우,
         {
-            $category_id = $this->personalblog_model->write_category(array(
-              'category' => $this->input->post('category_list'),
-              'delete_yn' => 'N',
-              'writer' => $this->writer,
+            $category_id = $this->personalblog_model->get_id_category(array(
+              'name' => $this->input->post('category_list'),
               'group' => 'personal'
             ));
         }
         else {
-            $category_id[0]['id'] = 2;
+            $category_id[0]['id'] = "카테고리 없음";
         }
         //print_r($category_id);
       $result= $this->personalblog_model->write(array(
@@ -89,7 +87,7 @@ class Personal_blog extends CI_Controller
     }
     else
     {
-        redirect('/write');
+        redirect('/personal_blog_write');
     }
   }
   // 전달받은 id의 값과 이름을 이용하여 게시글 반환
@@ -139,10 +137,12 @@ class Personal_blog extends CI_Controller
   {
       $username = $this->session->userdata('user_name');
       $result =  $this->personalblog_model->blog_list(array('username' => $username)); // writer, write_date, title, category_name
-      //print_r($result);
+      $category_list = $this->personalblog_model->category_list(array('group'=> "personal"));
+
       $data['menu'] = $this->menu;
       $this->load->view('include/header', $data);
       $data['list'] = $result;
+      $data['category_list'] = $category_list;
       $this->load->view('personal_blog/list', $data);
       $this->load->view('include/footer');
   }

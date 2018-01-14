@@ -121,7 +121,7 @@ class Commonblog_model extends CI_Model {
          common
       */
       try {
-        $sql = "CALL usp_category_LIST(?);";
+        $sql = "CALL USP_CATEGORY_LIST(?);";
         $query = $this->db->query($sql, $data);
       }
       catch (Exception $e) {
@@ -197,6 +197,24 @@ class Commonblog_model extends CI_Model {
       catch (Exception $e) {
         return $e;
       }
+
+      return $result;
+    }
+
+    function get_id_category($data)
+    {
+      /*
+       name, group
+      */
+      try {
+        $sql = "CALL USP_CATEGORY_GET_ID(?, ?);";
+        $query = $this->db->query($sql, $data);
+      }
+      catch (Exception $e) {
+        return $e;
+      }
+      $result = array();
+      $result = $query->result_array();
 
       return $result;
     }

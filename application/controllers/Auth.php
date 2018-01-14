@@ -50,12 +50,12 @@ class Auth extends CI_Controller
 
         if($this->input->post('userid') == $user->userid && password_verify($this->input->post('password'), $user->password))
         {
-			$new_user_data = array(
+					$new_user_data = array(
                    'user_name'  => $user->username,
                    'user_id'  	=> $this->input->post('userid'),
                    'is_login'		=> TRUE
             );
-			$this->session->set_userdata($new_user_data);
+						$this->session->set_userdata($new_user_data);
             redirect("/main");
         }
         else

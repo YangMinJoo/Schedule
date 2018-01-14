@@ -64,17 +64,15 @@ class Common_blog extends CI_Controller
 
         else if ($this->input->post('category_list') != "") //카테고리를 선택한경우
         {
-            $category_id = $this->commonblog_model->write_category(array(
-              'category' => $this->input->post('category_list'),
-              'delete_yn' => 'N',
-              'writer' => $this->writer,
-              'group' => 'common'
-            ));
+          $category_id = $this->commonblog_model->get_id_category(array(
+            'name' => $this->input->post('category_list'),
+            'group' => 'common'
+          ));
         }
 
         else
         {
-          $category_id[0]['id'] = 2;
+          $category_id[0]['id'] = "카테고리 없음";
         }
         //print_r($category_id);
       $result= $this->commonblog_model->write(array(
@@ -146,10 +144,12 @@ class Common_blog extends CI_Controller
   function blog_list()
   {
       $result =  $this->commonblog_model->blog_list();
-      //print_r($result);
+      $category_list = $this->commonblog_model->category_list(array('group'=> "common"));
+
       $data['menu'] = $this->menu;
       $this->load->view('include/header', $data);
       $data['list'] = $result;
+      $data['category_list'] = $category_list;
       $this->load->view('common_blog/list', $data);
       $this->load->view('include/footer');
   }

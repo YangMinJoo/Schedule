@@ -77,10 +77,10 @@ echo '</a></div></div></div>';
       <div class="mb-4">
         <ul class="list-unstyled list-lg tags">
 <?php
-for($i= 0; $i < count($list) ; $i++)
+for($i= 0; $i < count($category_list) ; $i++)
 {
 echo '<li><i class="fa fa-angle-right fa-fw"></i>';
-echo $list[$i]['category_name'];
+echo $category_list[$i]['name'];
 echo '</a></li>';
 }
 ?>
